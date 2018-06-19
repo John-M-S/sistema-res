@@ -1,0 +1,12 @@
+<!-- home.html -->
+
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Sistema de restaurante{% endblock %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css '%}"
+{% endblock %}
+{% block content %}
+    <h1> Bem-vindo! {{ user.usuario }} !!! </h1>
+    <button type="button" onclick="window.location.href='/logout/' ">Logout</button>
+{% endblock %}

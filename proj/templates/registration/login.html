@@ -1,0 +1,18 @@
+<!-- login.html -->
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block head %}Login{% endblock %}
+{% block content %}
+    {% if form.errors %}
+        <p>Seu nome de usuário e/ou senha não correspondem. Por favor tente novamente.</p>
+    {% endif %}
+
+    <form class="form" method="post" action="." >{% csrf_token %}
+        <input type="text" placeholder="Usuario" name="usuario">
+        <input type="password" placeholder="Senha" name="senha">
+        <button type="submit"  value="Login" id="login-button">Login</button>
+        <button type="button" onclick="window.location.href='/register/' ">Cadastrar</button>
+        <input type="hidden" name="proximo" value="/home" />
+    </form>
+
+{% endblock %}
